@@ -14,4 +14,17 @@ const citaObj = {
     sintomas: ""
 }
 
-console.log(citaObj)
+
+
+//Eventos
+pacienteInput.addEventListener("change", datosCitas );
+propietarioInput.addEventListener("change", datosCitas );
+emailInput.addEventListener("change", datosCitas );
+fechaInput.addEventListener("change", datosCitas );
+sintomasInput.addEventListener("change", datosCitas );
+
+function datosCitas(event) {
+    citaObj[event.target.name] = event.target.value
+
+    console.log(citaObj);
+}

@@ -15,8 +15,6 @@ const citaObj = {
     sintomas: ""
 }
 
-
-
 //Eventos
 pacienteInput.addEventListener("change", datosCitas );
 propietarioInput.addEventListener("change", datosCitas );
@@ -25,25 +23,6 @@ fechaInput.addEventListener("change", datosCitas );
 sintomasInput.addEventListener("change", datosCitas );
 
 formulario.addEventListener("submit", submitCita);
-
-function datosCitas(event) {
-    citaObj[event.target.name] = event.target.value
-
-    // console.log(citaObj);
-}
-
-function submitCita (e){
-    e.preventDefault();
-
-    if( Object.values(citaObj).some(valor => valor.trim() === "")){
-        const notificacion = new Notificacion({
-            texto: "Todos los campos son obligatorios",
-            tipo: "error"
-
-        })
-        return
-    } 
-}
 
 class Notificacion{
 
@@ -72,9 +51,42 @@ class Notificacion{
         //Insertar en el DOM 
         formulario.parentElement.insertBefore(alerta, formulario)
 
-        //Quitar despues de 5 segundos
+        //Quitar despues de 3 segundos
         setTimeout(() => {
             alerta.remove()
         }, 3000); 
     }
 }
+class AdminCitas {
+    constructor(){
+        this.citas = []
+
+        console.log(this.citas)
+    }
+    agregar(cita){
+        this.citas = [...this.citas, cita]
+        console.log(this.citas)
+    }
+}
+
+function datosCitas(event) {
+    citaObj[event.target.name] = event.target.value
+
+    // console.log(citaObj);
+}
+
+const citas = new AdminCitas()
+function submitCita (e){
+    e.preventDefault();
+
+    if( Object.values(citaObj).some(valor => valor.trim() === "")){
+        const notificacion = new Notificacion({
+            texto: "Todos los campos son obligatorios",
+            tipo: "error"
+
+        })
+        return
+    } 
+    citas.agregar(citaObj)
+}
+

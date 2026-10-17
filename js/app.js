@@ -128,6 +128,19 @@ function submitCita (e){
         return
     } 
     citas.agregar(citaObj)
-    citas.mos
+    formulario.reset()
+    reiniciarObjetoCita()
+}
+
+function reiniciarObjetoCita(){
+    //Reiniciar el Objeto
+    Object.assign(citaObj, {
+    paciente: "",
+    propietario: "",
+    email: "",
+    fecha: "",
+    sintomas: ""
+    })
+
 }
 

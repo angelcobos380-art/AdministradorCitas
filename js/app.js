@@ -120,16 +120,19 @@ function submitCita (e){
     e.preventDefault();
 
     if( Object.values(citaObj).some(valor => valor.trim() === "")){
-        const notificacion = new Notificacion({
+        new Notificacion({
             texto: "Todos los campos son obligatorios",
             tipo: "error"
-
         })
         return
     } 
-    citas.agregar(citaObj)
+    citas.agregar({...citaObj})
     formulario.reset()
     reiniciarObjetoCita()
+     new Notificacion({
+            texto: "Paciente Registrado",
+            tipo: "exito"
+        })
 }
 
 function reiniciarObjetoCita(){

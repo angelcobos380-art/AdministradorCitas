@@ -1,10 +1,11 @@
+
 # 🐾 Administrador de Citas — Veterinaria
 
 Aplicación web para registrar y administrar citas de pacientes (mascotas) de una veterinaria: alta, edición y eliminación desde una sola interfaz, con validación y notificaciones.
 
 **[🚀 Ver demo en vivo](https://veterinariacitas.vercel.app)**
 
-![Vista principal](https://res.cloudinary.com/dxjv0gq3e/image/upload/v1690911685/26-PROYECTO-AdministrarCitas/preview_26-proyecto-administrarcitas_1_2x.png)
+<img width="1779" height="930" alt="administrador_citas" src="https://github.com/user-attachments/assets/b81600fb-78ad-455d-b7dc-c20fc7715d89" />
 
 > 📚 **Sobre este proyecto:** la base está construida siguiendo un curso de JavaScript Moderno. Lo uso como práctica de fundamentos y como punto de partida para agregar mejoras propias, que están listadas abajo en el roadmap.
 

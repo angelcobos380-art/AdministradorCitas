@@ -1,33 +1,58 @@
-# Administrador de Citas - Veterinaria
+# 🐾 Administrador de Citas — Veterinaria
 
-## Descripción
-Aplicación web para gestionar citas veterinarias. Permite registrar pacientes, administrar citas y dar seguimiento al historial de atención de mascotas.
+Aplicación web para registrar y administrar citas de pacientes (mascotas) de una veterinaria: alta, edición y eliminación desde una sola interfaz, con validación y notificaciones.
 
-## Características
-- 📋 Registro de pacientes (mascotas)
-- 📅 Gestión de citas veterinarias
-- 📊 Seguimiento de historial de pacientes
-- ✏️ Edición y eliminación de registros
-- 💾 Almacenamiento de datos en tiempo real
+**[🚀 Ver demo en vivo](https://veterinariacitas.vercel.app)**
 
-## Tecnologías
-- HTML5
-- CSS3
-- JavaScript (ES6+)
+![Vista principal](https://res.cloudinary.com/dxjv0gq3e/image/upload/v1690911685/26-PROYECTO-AdministrarCitas/preview_26-proyecto-administrarcitas_1_2x.png)
 
-## Uso
-1. Abre `index.html` en el navegador
-2. Completa el formulario con datos del paciente y cita
-3. Visualiza, edita o elimina citas según sea necesario
+> 📚 **Sobre este proyecto:** la base está construida siguiendo un curso de JavaScript Moderno. Lo uso como práctica de fundamentos y como punto de partida para agregar mejoras propias, que están listadas abajo en el roadmap.
 
-## Estructura del Proyecto
-```
-├── index.html
-├── css/
-│   └── styles.css
-└── js/
-    └── app.js
-```
+---
 
-## Instalación
-No requiere instalación. Solo descarga los archivos y abre `index.html` en tu navegador.
+## Funcionalidades actuales
+
+- Registro de citas con paciente, propietario, correo, fecha y síntomas
+- Validación: no permite enviar el formulario con campos vacíos
+- Notificaciones de error y éxito que desaparecen automáticamente
+- Edición de citas: el mismo formulario se reutiliza y cambia a "Guardar Cambios"
+- Eliminación de citas
+- Mensaje cuando no hay pacientes registrados
+
+## 🧩 Tecnologías y conceptos aplicados
+
+- Clases en JavaScript: `AdminCitas` (estado y renderizado) y `Notificacion` (alertas de interfaz)
+- Actualizaciones inmutables del estado con spread, `map` y `filter`
+- Manipulación del DOM con la API nativa, sin librerías
+- Manejo de eventos y de formularios
+
+## 🗺️ Roadmap: mejoras que voy a agregar
+
+**Prioridad alta (calidad y seguridad)**
+- [ ] Evitar inyección de HTML: renderizar los datos del usuario con `textContent` en lugar de `innerHTML`
+- [ ] Persistencia de datos con `localStorage`, para que las citas sobrevivan a una recarga
+- [ ] Botón para cancelar la edición y corregir el caso de eliminar una cita mientras se edita
+
+**Prioridad media (experiencia de usuario)**
+- [ ] Formato de fecha legible y orden de citas por fecha
+- [ ] Búsqueda y filtro por nombre del paciente o propietario
+- [ ] Confirmación antes de eliminar una cita
+- [ ] Mejoras de accesibilidad: `aria-label` en los botones y avisos con `aria-live`
+- [ ] Diseño responsivo revisado en celular
+
+**Prioridad baja (arquitectura y crecimiento)**
+- [ ] Vista de historial por paciente
+- [ ] Validación más completa (formato de correo, fechas pasadas)
+- [ ] Versión full stack con Node.js + MongoDB, para guardar las citas en una base de datos real
+
+## 🛠️ Stack
+
+`HTML5` · `Tailwind CSS` · `JavaScript ES6+` · `Vercel`
+
+---
+
+### 👤 Autor
+
+**Ángel Marco Martínez Cobos** — Estudiante de Ing. en TI, UPChiapas
+
+[GitHub](https://github.com/angelcobos380-art) · [LinkedIn](https://www.linkedin.com/in/angel-marco-martinez-cobos-b68184432)

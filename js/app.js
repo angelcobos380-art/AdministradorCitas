@@ -76,13 +76,23 @@ class AdminCitas {
     }
     editar(citaActualizada){
         this.citas = this.citas.map(cita => cita.id === citaActualizada.id  ? citaActualizada: cita)
-        this.mostrar
+        this.mostrar()
+    }
+    eliminar(id){
+        this.citas = this.citas.filter(cita => cita.id !== id)
+        this.mostrar()
     }
     mostrar(){
 
         //Limpiar HTML
         while(contenedorCitas.firstChild){
             contenedorCitas.removeChild(contenedorCitas.firstChild)
+        }
+
+        //Si hay citas
+        if(this.citas.length === 0){
+            contenedorCitas.innerHTML = '<p class="text-xl mt-5 mb-10 text-center">No Hay Pacientes</p>'
+            return;
         }
 
         //Generando las citas
